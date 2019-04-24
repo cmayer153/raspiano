@@ -1,0 +1,5 @@
+cmake_minimum_required (VERSION 3.7)
+project (Raspiano)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lstdc++fs -std=c++17")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -lstdc++fs -std=c++17")
+add_executable(Raspiano run_host.cpp minimal_host.cpp)
