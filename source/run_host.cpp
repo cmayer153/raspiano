@@ -9,5 +9,6 @@ int main(int argc, char* argv[])
 {
   std::cout << "Starting Host..." << std::endl;
   MinimalHost* myHost = new MinimalHost();
+  myHost->start();
   return 0;
 }

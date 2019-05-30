@@ -1,11 +1,23 @@
 #include "public.sdk/source/vst/hosting/module.h"
+#include "pluginterfaces/base/ipluginbase.h"
+//#include "steinberg_plugin_factory.h"
 
+/*
+namespace Steinberg
+{
+  class IPluginFactory;
+}
+*/
 
 namespace Raspiano
 {
+
 class VSTModule
 {
-  typedef void* (*get_plugin_factory)();
+  //typedef void* (*get_plugin_factory)();
+  using GetFactoryProc = Steinberg::IPluginFactory*(*)();
+//  using VST3::Hosting::PluginFactory::PluginFactoryPtr = 
+//    Steinberg::IPtr<Steinberg::IPluginFactory>;
 
 
 public:
@@ -28,7 +40,10 @@ public:
 
 private:
   void* pluginPtr;
-  get_plugin_factory myGetFactory;
+  GetFactoryProc myGetFactoryProc;
+  VST3::Hosting::PluginFactory* myPluginFactory;
+  VST3::Hosting::ClassInfo myCI;
+  //add ptr to plugin object?
   
 
 };

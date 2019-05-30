@@ -11,6 +11,7 @@ class MinimalHost
 {
 public:
   MinimalHost();
+  void start();
 
 private:
   std::experimental::filesystem::path vstPath; 

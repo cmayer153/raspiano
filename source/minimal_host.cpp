@@ -9,7 +9,7 @@ MinimalHost::MinimalHost()
 {
   std::cout << "Building MinimalHost..." << std::endl;
 
-  std::string pathName = "/home/chris/Downloads/VST_SDK/hw_build/VST3/Debug/hostchecker.vst3/Contents/x86_64-linux/hostchecker.so";
+  std::string pathName = "/home/chris/Downloads/VST_SDK/sdk_build/VST3/Debug/hostchecker.vst3/Contents/x86_64-linux/hostchecker.so";
 
   vstPath = std::experimental::filesystem::path (pathName);
 
@@ -24,7 +24,13 @@ MinimalHost::MinimalHost()
     myModule = new VSTModule();
     myModule->setObjectHandle(vstObjectHandle);
     myModule->initialize();
+    std::cout << "MinimalHost ctor complete" << std::endl;
   }
+}
+
+void MinimalHost::start()
+{
+  //do something
 }
 
 }
